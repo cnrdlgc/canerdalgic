@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Stream Viewer</title>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1>Multi-Stream Viewer</h1>
+        <div class="controls">
+          <select id="gridSize" class="grid-select">
+            <option value="4">2x2 Grid (4 streams)</option>
+            <option value="9">3x3 Grid (9 streams)</option>
+            <option value="16">4x4 Grid (16 streams)</option>
+          </select>
+          <button id="settingsBtn" class="btn">Settings</button>
+        </div>
+      </header>
+
+      <main class="main">
+        <div id="streamGrid" class="stream-grid grid-4"></div>
+      </main>
+
+      <div id="settingsModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Channel Settings</h2>
+            <button id="closeModal" class="close-btn">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="channels-list" id="channelsList"></div>
+            <div class="add-channel-form">
+              <h3>Add New Channel</h3>
+              <input type="text" id="channelName" placeholder="Channel Name" class="input">
+              <input type="text" id="channelUrl" placeholder="YouTube URL or m3u8 Stream URL" class="input">
+              <select id="streamType" class="input">
+                <option value="youtube">YouTube</option>
+                <option value="m3u8">M3U8 Stream</option>
+              </select>
+              <button id="addChannel" class="btn btn-primary">Add Channel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
